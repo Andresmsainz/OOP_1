@@ -9,11 +9,63 @@ namespace OOP_1
             Console.WriteLine("Hello Object Oriented Programming... I'm Not Scared of You!");
 
             bool bMethods3 = false;
-            bool bMethods4 = true;
+            bool bMethods4 = false;
+            bool bOvMethodsEx = true;
 
             if (bMethods3 == true) fnMethods3();
             if (bMethods4 == true) fnMethods4();
+            if (bOvMethodsEx == true) fnOvMethodsEx();
 
+        }
+
+        static void fnOvMethodsEx()
+        {
+            Console.WriteLine("Inside Overloaded Methods Exercise");
+
+            int a, b, c;
+            double x, y, z;
+
+            a = 5;
+            b = 10;
+            c = 20;
+
+            x = 1.5d;
+            y = 2.5d;
+            z = 5.5d;
+
+            //int overloads
+            AddNumbers(a, b);
+            AddNumbers(a, b, c);
+
+            //double overloads
+            AddNumbers(x, y);
+            AddNumbers(x, y, z);
+
+
+        }
+
+        static void AddNumbers(int a, int b)
+        {
+            int result = (a + b);
+            Console.WriteLine($"{a} + {b} = {result}");
+        }
+
+        static void AddNumbers(int a, int b, int c)
+        {
+            int result = (a + b + c);
+            Console.WriteLine($"{a} + {b} + {c} = {result}");
+        }
+
+        static void AddNumbers(double x, double y)
+        {
+            double result = (x + y);
+            Console.WriteLine($"{x} + {y} = {result}");
+        }
+
+        static void AddNumbers(double x, double y, double z)
+        {
+            double result = (x + y + z);
+            Console.WriteLine($"{x} + {y} + {z} = {result}");
         }
 
         static void fnMethods3()
