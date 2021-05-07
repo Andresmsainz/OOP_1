@@ -8,9 +8,11 @@ namespace OOP_1
         {
             Console.WriteLine("Hello Object Oriented Programming... I'm Not Scared of You!");
 
-            bool bMethods3 = true;
+            bool bMethods3 = false;
+            bool bMethods4 = true;
 
             if (bMethods3 == true) fnMethods3();
+            if (bMethods4 == true) fnMethods4();
 
         }
 
@@ -65,7 +67,48 @@ namespace OOP_1
             secondEmp = "Freddy Mercury";
 
             Console.WriteLine($"Inside Change Names Out Method\n--------\nFirst Employee = {firstEmp}\nSecond Employee = {secondEmp}\n\n");
+        }
 
+        static void fnMethods4()
+        {
+            Console.WriteLine("Inside Methods #4");
+            string guestName = "";
+
+            Console.WriteLine("Hello Dear Guest, what is your name?");
+            guestName = Console.ReadLine();
+
+            WelcomeGuest(guestName); //Everything is handled in function
+
+            if (guestName == string.Empty)
+            {
+                Ov_WelcomeGuest();
+            }
+            else
+            {
+                Ov_WelcomeGuest(guestName);
+            }
+        }
+
+        static void Ov_WelcomeGuest()
+        {
+            Console.WriteLine("Ok, we hope you enjoy staying at our hotel, Mr X... Turqouise Blue Overdrive!");
+        }
+
+        static void Ov_WelcomeGuest(string sName)
+        {
+            Console.WriteLine($"Thanks {sName}, we hope you enjoy staying at our hotel... Turqouise Blue Overdrive!");
+        }
+
+        static void WelcomeGuest(string sGuest)
+        {
+            if (sGuest == string.Empty)
+            {
+                Console.WriteLine("Ok, we hope you enjoy staying at our hotel, Mr X!");
+            }
+            else
+            {
+                Console.WriteLine($"Ok, we hope you enjoy staying at our hotel, {sGuest}!");
+            }  
         }
     }
 }
