@@ -11,15 +11,32 @@ namespace OOP_1
             bool bMethods3 = false;
             bool bMethods4 = false;
             bool bOvMethodsEx = false;
-            bool bClasses = true;
+            bool bClasses = false;
+            bool bStaticMethods = true;
 
             if (bMethods3 == true) fnMethods3();
             if (bMethods4 == true) fnMethods4();
             if (bOvMethodsEx == true) fnOvMethodsEx();
             if (bClasses == true) fnClasses();
-
+            if (bStaticMethods == true) fnStaticMethods();
         }
 
+        static void fnStaticMethods()
+        {
+            Console.WriteLine("Inside Static Methods");
+
+            SayHi(); //Static Method
+
+            //Non Static Methods need an instance
+            NonStatic nonStatic = new NonStatic();
+            nonStatic.SayHi();
+            
+         }
+
+        static void SayHi()
+        {
+            Console.WriteLine("Hi from the local static method");
+        }
         static void fnClasses()
         {
             Console.WriteLine("Inside Classes");
@@ -229,5 +246,13 @@ namespace OOP_1
         }
             
 
+    }
+
+    class NonStatic
+    {
+        public void SayHi()
+        {
+            Console.WriteLine("Hi from the non static but public method");
+        }
     }
 }
