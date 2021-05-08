@@ -4,6 +4,9 @@ namespace OOP_1
 {
     class Program
     {
+        //Scope Method
+        static string sname = "Daniel";
+
         static void Main(string[] args)
         {
             Console.WriteLine("Hello Object Oriented Programming... I'm Not Scared of You!");
@@ -12,13 +15,30 @@ namespace OOP_1
             bool bMethods4 = false;
             bool bOvMethodsEx = false;
             bool bClasses = false;
-            bool bStaticMethods = true;
+            bool bStaticMethods = false;
+            bool bScope = true;
 
             if (bMethods3 == true) fnMethods3();
             if (bMethods4 == true) fnMethods4();
             if (bOvMethodsEx == true) fnOvMethodsEx();
             if (bClasses == true) fnClasses();
             if (bStaticMethods == true) fnStaticMethods();
+            if (bScope == true) fnScope();
+        }
+
+        static void fnScope()
+        {
+            Console.WriteLine("Inside Scope Methods");
+
+            
+
+            SayHi_Scope(); 
+
+        }
+
+        static void SayHi_Scope()
+        {
+            Console.WriteLine("Hi " + sname );
         }
 
         static void fnStaticMethods()
