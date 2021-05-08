@@ -34,8 +34,13 @@ namespace OOP_1
             personTwo.LastName = "Mohey";
             personTwo.Country = "Egypt";
 
+            Person personThree = new Person();
+            personThree.FirstName = "El Papo";
+            //No Set Values... Constructors Will Handle
+
             Console.WriteLine($"Person One: {personOne.FirstName} {personOne.LastName} is from {personOne.Country}");
             Console.WriteLine($"Person Two: {personTwo.FirstName} {personTwo.LastName} is from {personTwo.Country}");
+            Console.WriteLine($"Person Three: {personThree.FirstName} {personThree.LastName} is from {personThree.Country}");
         }
 
         static void fnOvMethodsEx()
@@ -214,6 +219,15 @@ namespace OOP_1
             get { return birthDate; }
             set { birthDate = value; }
         }
+
+        public Person()
+        {
+            //Constructors
+            firstName = "Unknown First Name";
+            lastName = "Unknown Last Name";
+            country = "Some Unknown Island";
+        }
+            
 
     }
 }
