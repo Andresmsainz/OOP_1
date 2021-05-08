@@ -10,12 +10,32 @@ namespace OOP_1
 
             bool bMethods3 = false;
             bool bMethods4 = false;
-            bool bOvMethodsEx = true;
+            bool bOvMethodsEx = false;
+            bool bClasses = true;
 
             if (bMethods3 == true) fnMethods3();
             if (bMethods4 == true) fnMethods4();
             if (bOvMethodsEx == true) fnOvMethodsEx();
+            if (bClasses == true) fnClasses();
 
+        }
+
+        static void fnClasses()
+        {
+            Console.WriteLine("Inside Classes");
+
+            Person personOne = new Person();
+            personOne.FirstName = "Andres";
+            personOne.LastName = "Sainz";
+            personOne.Country = "USA";
+
+            Person personTwo = new Person();
+            personTwo.FirstName = "Ahmad";
+            personTwo.LastName = "Mohey";
+            personTwo.Country = "Egypt";
+
+            Console.WriteLine($"Person One: {personOne.FirstName} {personOne.LastName} is from {personOne.Country}");
+            Console.WriteLine($"Person Two: {personTwo.FirstName} {personTwo.LastName} is from {personTwo.Country}");
         }
 
         static void fnOvMethodsEx()
@@ -162,5 +182,38 @@ namespace OOP_1
                 Console.WriteLine($"Ok, we hope you enjoy staying at our hotel, {sGuest}!");
             }  
         }
+    }
+
+    class Person
+    {
+        string firstName;
+        string lastName;
+        DateTime birthDate;
+        string country;
+
+        public string FirstName
+        {
+            get { return firstName; }
+            set { firstName = value; }
+        }
+
+        public string LastName
+        {
+            get { return lastName; }
+            set { lastName = value; }
+        }
+
+        public string Country
+        {
+            get { return country; }
+            set { country = value; }
+        }
+
+        public DateTime BirthDate
+        {
+            get { return birthDate; }
+            set { birthDate = value; }
+        }
+
     }
 }
