@@ -16,7 +16,8 @@ namespace OOP_1
             bool bOvMethodsEx = false;
             bool bClasses = false;
             bool bStaticMethods = false;
-            bool bScope = true;
+            bool bScope = false;
+            bool bInheritance = true;
 
             if (bMethods3 == true) fnMethods3();
             if (bMethods4 == true) fnMethods4();
@@ -24,6 +25,16 @@ namespace OOP_1
             if (bClasses == true) fnClasses();
             if (bStaticMethods == true) fnStaticMethods();
             if (bScope == true) fnScope();
+            if (bInheritance == true) fnInheritance();
+        }
+
+        static void fnInheritance()
+        {
+            Console.WriteLine("Inside Inheritance Method");
+
+            Animal animal = new Animal();
+            Dogss dog = new Dogss();
+            dog.animalName = "Bronce"; //Because of inheritance I now have access to Animal through Dogs
         }
 
         static void fnScope()
@@ -266,6 +277,30 @@ namespace OOP_1
         }
             
 
+    }
+
+    class Animal
+    {
+        public string animalName;
+        public DateTime animalBirthDate;
+
+        public void FeedAnimal()
+        {
+
+        }
+    }
+
+    class Dogss : Animal
+    {
+        public string dogBreed;
+        public string dogIntelligence;
+        public bool isEasyToTrain;
+    }
+
+    class Birds
+    {
+        public string birdColor;
+        public string birdCountry;
     }
 
     class NonStatic
